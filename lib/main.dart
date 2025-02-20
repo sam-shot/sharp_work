@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sharp_work/ui/theme/theme.dart';
 import 'package:sharp_work/ui/ui.dart';
 
 void main() {

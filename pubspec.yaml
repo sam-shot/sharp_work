@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
 
   gap:
+  flutter_svg:
 
 dev_dependencies:
   flutter_test:
@@ -35,3 +36,11 @@ flutter:
           weight: 500
         - asset: assets/fonts/PlusJakartaSans-Bold.ttf
           weight: 700
+
+flutter_gen:
+  output: lib/ui/shared/constants/
+
+  integrations:
+    image: true
+    flutter_svg: true
+    rive: true

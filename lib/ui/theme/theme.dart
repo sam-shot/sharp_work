@@ -5,12 +5,12 @@ class SharpTheme {
     fontFamily: 'Jakarta',
     textTheme: TextTheme(
       headlineLarge: sharpTextStyle.copyWith(
-        fontSize: 30,
+        fontSize: 28,
         fontWeight: FontWeight.w700,
         letterSpacing: -0.5,
       ),
       headlineMedium: sharpTextStyle.copyWith(
-        fontSize: 30,
+        fontSize: 28,
         fontWeight: FontWeight.w500,
         letterSpacing: -0.5,
       ),

@@ -1,6 +1,8 @@
 library;
 
 export './components/onboarding_banner.dart';
+export './constants/assets.gen.dart';
+export './constants/fonts.gen.dart';
 export './constants/sharp_border_radius.dart';
 export './constants/sharp_padding.dart';
 export './constants/sharp_spacing.dart';
