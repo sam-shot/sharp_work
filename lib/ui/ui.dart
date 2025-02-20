@@ -1,3 +1,5 @@
 library;
 
-export './views/onboarding/presentation/onboarding_view.dart';
+export 'views/onboarding/onboarding_view.dart';
+export './theme/export.dart';
+export 'shared/shared.dart';

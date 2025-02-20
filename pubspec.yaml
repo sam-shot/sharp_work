@@ -16,6 +16,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  flutter_gen: ^5.9.0
 
 flutter:
   uses-material-design: true
@@ -28,4 +29,9 @@ flutter:
   fonts:
     - family: Jakarta
       fonts:
-        - asset: assets/fonts/jakarta.ttf
+        - asset: assets/fonts/PlusJakartaSans-Light.ttf
+          weight: 300
+        - asset: assets/fonts/PlusJakartaSans-Regular.ttf
+          weight: 500
+        - asset: assets/fonts/PlusJakartaSans-Bold.ttf
+          weight: 700
