@@ -4,8 +4,40 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:sharp_work/ui/ui.dart';
 
-class OnboardingView extends StatelessWidget {
+class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
+
+  @override
+  State<OnboardingView> createState() => _OnboardingViewState();
+}
+
+class _OnboardingViewState extends State<OnboardingView>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<int> _animation;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _controller = AnimationController(
+      duration: const Duration(seconds: 2),
+      vsync: this,
+    )..repeat(reverse: true);
+
+    _animation = IntTween(begin: 0, end: 30).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeInOut,
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,19 +45,35 @@ class OnboardingView extends StatelessWidget {
       backgroundColor: context.white,
       body: Stack(
         children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Assets.svg.blob1.svg(
-              height: 500,
-            ),
+          AnimatedBuilder(
+            animation: _animation,
+            builder: (context, child) {
+              return Positioned(
+                top: 0,
+                left: 0,
+                child: Transform.translate(
+                  offset: Offset(0, -_animation.value.toDouble()),
+                  child: Assets.svg.blob1.svg(
+                    height: 500,
+                  ),
+                ),
+              );
+            },
           ),
-          Positioned(
-            right: 0,
-            bottom: 0,
-            child: Assets.svg.blob2.svg(
-              height: 500,
-            ),
+          AnimatedBuilder(
+            animation: _animation,
+            builder: (context, child) {
+              return Positioned(
+                right: 0,
+                bottom: 0,
+                child: Transform.translate(
+                  offset: Offset(0, _animation.value.toDouble()),
+                  child: Assets.svg.blob2.svg(
+                    height: 500,
+                  ),
+                ),
+              );
+            },
           ),
           Positioned.fill(
             child: BackdropFilter(
@@ -97,7 +145,7 @@ class OnboardingView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SharpSpacing.large,
+                  SharpSpacing.xLarge,
                 ],
               ),
             ),
