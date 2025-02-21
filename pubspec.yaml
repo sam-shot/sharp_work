@@ -11,12 +11,13 @@ dependencies:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-    
+
   gap:
   flutter_svg:
   flutter_screenutil:
   auto_route:
   get_it:
+  hooks_riverpod:
 
 dev_dependencies:
   flutter_test:

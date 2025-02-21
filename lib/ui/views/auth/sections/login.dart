@@ -1,12 +1,13 @@
 part of '../auth_view.dart';
 
-class Login extends StatelessWidget {
+class Login extends ConsumerWidget {
   const Login({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final model = ref.watch(authProvider);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -28,7 +29,7 @@ class Login extends StatelessWidget {
         Spacer(),
         PrimaryButton(
           label: 'Login',
-          onTap: () {},
+          onTap:model.login,
         ),
       ],
     );

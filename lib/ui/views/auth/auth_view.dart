@@ -1,6 +1,8 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:sharp_work/ui/ui.dart';
+import 'package:sharp_work/ui/views/auth/auth_viewmodel.dart';
 
 part './sections/login.dart';
 part './sections/signup.dart';

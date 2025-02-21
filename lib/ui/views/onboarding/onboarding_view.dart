@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 
 import 'package:auto_route/auto_route.dart';
@@ -18,9 +19,6 @@ class _OnboardingViewState extends State<OnboardingView>
   late AnimationController _controller;
   late Animation<int> _animation;
 
-  double bannerRightShift = 0;
-  double bannerLeftShift = 0;
-
   @override
   void initState() {
     super.initState();
@@ -36,13 +34,6 @@ class _OnboardingViewState extends State<OnboardingView>
         curve: Curves.easeInOut,
       ),
     );
-
-    Future(() {
-      setState(() {
-        bannerRightShift = -0.04;
-        bannerLeftShift = 0.04;
-      });
-    });
   }
 
   @override
@@ -108,32 +99,47 @@ class _OnboardingViewState extends State<OnboardingView>
                   SharpSpacing.xxxLarge,
                   SharpSpacing.large,
                   SharpSpacing.xxxLarge,
-                  AnimatedRotation(
-                    duration: Duration(seconds: 1),
-                    turns: bannerRightShift,
-                    child: OnboardingBanner(
-                      label: 'Find your dream Job',
-                      color: context.yellow,
-                    ),
+                  TweenAnimationBuilder(
+                    tween: Tween(begin: 0.0, end: -pi / 12),
+                    duration: const Duration(seconds: 1),
+                    builder: (context, value, child) {
+                      return Transform.rotate(
+                        angle: value,
+                        child: OnboardingBanner(
+                          label: 'Find your dream Job',
+                          color: context.yellow,
+                        ),
+                      );
+                    },
                   ),
                   SharpSpacing.large,
-                  AnimatedRotation(
-                    duration: Duration(seconds: 1),
-                    turns: bannerLeftShift,
-                    child: OnboardingBanner(
-                      label: 'Flexible Job Providers',
-                      color: context.teal,
-                      textColor: context.white,
-                    ),
+                  TweenAnimationBuilder(
+                    tween: Tween(begin: 0.0, end: pi / 18),
+                    duration: const Duration(seconds: 1),
+                    builder: (context, value, child) {
+                      return Transform.rotate(
+                        angle: value,
+                        child: OnboardingBanner(
+                          label: 'Flexible Job Providers',
+                          color: context.teal,
+                          textColor: context.white,
+                        ),
+                      );
+                    },
                   ),
                   SharpSpacing.large,
-                  AnimatedRotation(
-                    duration: Duration(seconds: 1),
-                    turns: bannerRightShift,
-                    child: OnboardingBanner(
-                      label: 'Sharp work updates daily',
-                      color: context.white,
-                    ),
+                  TweenAnimationBuilder(
+                    tween: Tween(begin: 0.0, end: -pi / 12),
+                    duration: const Duration(seconds: 1),
+                    builder: (context, value, child) {
+                      return Transform.rotate(
+                        angle: value,
+                        child: OnboardingBanner(
+                          label: 'Sharp work updates daily',
+                          color: context.white,
+                        ),
+                      );
+                    },
                   ),
                   Spacer(),
                   Text(

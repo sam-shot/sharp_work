@@ -19,7 +19,9 @@ class SharpDimensions {
   static double size72 = 72.r;
   static double size80 = 80.r;
   static double size88 = 88.r;
-  
-
-
+  static double size100 = 100.r;
+  static double size120 = 120.r;
+  static double size150 = 150.r;
+  static double size200 = 200.r;
+  static double size300 = 300.r;
 }

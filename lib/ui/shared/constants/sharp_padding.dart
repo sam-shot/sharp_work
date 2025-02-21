@@ -16,6 +16,8 @@ class SharpPadding {
   static EdgeInsets get verticalPadding20 =>
       EdgeInsets.symmetric(vertical: 20.r);
 
+  static EdgeInsets get padding2 => EdgeInsets.all(2.r);
+
   static EdgeInsets get padding4 => EdgeInsets.all(4.r);
 
   static EdgeInsets get padding6 => EdgeInsets.all(6.r);

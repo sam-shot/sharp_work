@@ -13,5 +13,6 @@ class SharpRouter extends RootStackRouter {
           initial: true,
         ),
         AutoRoute(page: AuthRoute.page),
+        AutoRoute(page: HomeRoute.page),
       ];
 }
