@@ -8,6 +8,8 @@ class PrimaryButton extends StatelessWidget {
   final VoidCallback? onTap;
   final bool disabled;
   final bool loading;
+  final BorderRadius? borderRadius;
+  final double? height;
 
   const PrimaryButton({
     super.key,
@@ -15,6 +17,8 @@ class PrimaryButton extends StatelessWidget {
     this.color,
     required this.label,
     this.onTap,
+    this.borderRadius,
+    this.height,
     this.disabled = false,
     this.loading = false,
   });
@@ -25,12 +29,12 @@ class PrimaryButton extends StatelessWidget {
       color: color ?? context.primaryColor,
       minWidth: double.infinity,
       disabledColor: context.grey,
-      height: 52,
+      height: height ?? 52,
       elevation: 0,
       highlightElevation: 0,
       hoverElevation: 0,
       shape: RoundedRectangleBorder(
-        borderRadius: SharpBorderRadius.radius10,
+        borderRadius: borderRadius ?? SharpBorderRadius.radius10,
       ),
       child: loading
           ? SizedBox(
@@ -43,7 +47,8 @@ class PrimaryButton extends StatelessWidget {
             )
           : Text(
               label,
-              style: context.titleSmall.copyWith(
+              style: context.labelMedium.copyWith(
+                fontWeight: FontWeight.w700,
                 color: disabled
                     ? context.black.withAlpha(150)
                     : (textColor ?? context.white),
