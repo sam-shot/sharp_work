@@ -19,6 +19,7 @@ class MainApp extends StatelessWidget {
       builder: (context, _) {
         return MaterialApp.router(
           theme: SharpTheme.lightTheme,
+          debugShowCheckedModeBanner: false,
           routerConfig: _sharpRouter.config(),
         );
       },

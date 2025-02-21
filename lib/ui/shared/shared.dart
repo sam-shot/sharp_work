@@ -1,6 +1,8 @@
 library;
 
+export './components/buttons.dart';
 export './components/onboarding_banner.dart';
+export './components/textfield.dart';
 export './constants/assets.gen.dart';
 export './constants/dimensions.dart';
 export './constants/fonts.gen.dart';

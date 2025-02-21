@@ -9,7 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_web_plugins:
+    sdk: flutter
+    
   gap:
   flutter_svg:
   flutter_screenutil:
@@ -35,9 +37,9 @@ flutter:
   fonts:
     - family: Jakarta
       fonts:
-        - asset: assets/fonts/PlusJakartaSans-Light.ttf
+        - asset: assets/fonts/PlusJakartaSans-Medium.ttf
           weight: 300
-        - asset: assets/fonts/PlusJakartaSans-Regular.ttf
+        - asset: assets/fonts/PlusJakartaSans-SemiBold.ttf
           weight: 500
         - asset: assets/fonts/PlusJakartaSans-Bold.ttf
           weight: 700

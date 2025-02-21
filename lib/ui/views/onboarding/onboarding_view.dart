@@ -144,25 +144,13 @@ class _OnboardingViewState extends State<OnboardingView>
                     textAlign: TextAlign.center,
                   ),
                   SharpSpacing.large,
-                  MaterialButton(
-                    onPressed: () {
-                      context.pushRoute(AuthRoute());
+                  PrimaryButton(
+                    label: 'Get Started',
+                    onTap: () {
+                      context.router.push(const AuthRoute());
                     },
+                    textColor: context.primaryColor,
                     color: context.white,
-                    minWidth: double.infinity,
-                    height: 52,
-                    elevation: 0,
-                    highlightElevation: 0,
-                    hoverElevation: 0,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: SharpBorderRadius.radius12,
-                    ),
-                    child: Text(
-                      'Get Started',
-                      style: context.titleSmall.copyWith(
-                        color: context.primaryColor,
-                      ),
-                    ),
                   ),
                   SharpSpacing.xLarge,
                 ],

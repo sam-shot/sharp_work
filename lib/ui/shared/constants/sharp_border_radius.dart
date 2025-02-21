@@ -13,4 +13,10 @@ class SharpBorderRadius {
   static BorderRadius get radius14 => BorderRadius.circular(14.r);
   static BorderRadius get radius16 => BorderRadius.circular(16.r);
   static BorderRadius get radius20 => BorderRadius.circular(20.r);
+  static BorderRadius get radius24 => BorderRadius.circular(24.r);
+  static BorderRadius get radius32 => BorderRadius.circular(32.r);
+  static BorderRadius get radius40 => BorderRadius.circular(40.r);
+  static BorderRadius get radius48 => BorderRadius.circular(48.r);
+  static BorderRadius get radius56 => BorderRadius.circular(56.r);
+  static BorderRadius get radius64 => BorderRadius.circular(64.r);
 }

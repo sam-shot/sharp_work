@@ -31,6 +31,33 @@ class SharpTheme {
         fontSize: 16,
         fontWeight: FontWeight.w700,
       ),
+      bodyLarge: sharpTextStyle.copyWith(
+        fontSize: 16,
+        fontWeight: FontWeight.w300,
+      ),
+      bodyMedium: sharpTextStyle.copyWith(
+        fontSize: 14,
+        fontWeight: FontWeight.w300,
+      ),
+      bodySmall: sharpTextStyle.copyWith(
+        fontSize: 12,
+        fontWeight: FontWeight.w300,
+      ),
+      labelLarge: sharpTextStyle.copyWith(
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+        letterSpacing: -0.2,
+      ),
+      labelMedium: sharpTextStyle.copyWith(
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+        letterSpacing: -0.2,
+      ),
+      labelSmall: sharpTextStyle.copyWith(
+        fontSize: 12,
+        fontWeight: FontWeight.w500,
+        letterSpacing: -0.2,
+      ),
     ),
   );
 }
