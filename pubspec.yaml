@@ -12,6 +12,7 @@ dependencies:
 
   gap:
   flutter_svg:
+  flutter_screenutil: 
 
 dev_dependencies:
   flutter_test:

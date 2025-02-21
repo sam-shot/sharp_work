@@ -17,4 +17,9 @@ extension BuildContextETX on BuildContext {
   TextStyle get titleLarge => Theme.of(this).textTheme.titleLarge!;
   TextStyle get titleMedium => Theme.of(this).textTheme.titleMedium!;
   TextStyle get titleSmall => Theme.of(this).textTheme.titleSmall!;
+
+  // SIZINGS
+
+  double get height => MediaQuery.sizeOf(this).height;
+  double get width => MediaQuery.sizeOf(this).width;
 }

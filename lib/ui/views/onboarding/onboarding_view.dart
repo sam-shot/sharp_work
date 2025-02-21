@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -16,6 +15,9 @@ class _OnboardingViewState extends State<OnboardingView>
   late AnimationController _controller;
   late Animation<int> _animation;
 
+  double bannerRightShift = 0;
+  double bannerLeftShift = 0;
+
   @override
   void initState() {
     super.initState();
@@ -31,6 +33,13 @@ class _OnboardingViewState extends State<OnboardingView>
         curve: Curves.easeInOut,
       ),
     );
+
+    Future(() {
+      setState(() {
+        bannerRightShift = -0.04;
+        bannerLeftShift = 0.04;
+      });
+    });
   }
 
   @override
@@ -54,7 +63,7 @@ class _OnboardingViewState extends State<OnboardingView>
                 child: Transform.translate(
                   offset: Offset(0, -_animation.value.toDouble()),
                   child: Assets.svg.blob1.svg(
-                    height: 500,
+                    height: context.height,
                   ),
                 ),
               );
@@ -69,7 +78,7 @@ class _OnboardingViewState extends State<OnboardingView>
                 child: Transform.translate(
                   offset: Offset(0, _animation.value.toDouble()),
                   child: Assets.svg.blob2.svg(
-                    height: 500,
+                    height: context.height,
                   ),
                 ),
               );
@@ -96,16 +105,18 @@ class _OnboardingViewState extends State<OnboardingView>
                   SharpSpacing.xxxLarge,
                   SharpSpacing.large,
                   SharpSpacing.xxxLarge,
-                  Transform.rotate(
-                    angle: -pi / 12,
+                  AnimatedRotation(
+                    duration: Duration(seconds: 1),
+                    turns: bannerRightShift,
                     child: OnboardingBanner(
                       label: 'Find your dream Job',
                       color: context.yellow,
                     ),
                   ),
                   SharpSpacing.large,
-                  Transform.rotate(
-                    angle: pi / 18,
+                  AnimatedRotation(
+                    duration: Duration(seconds: 1),
+                    turns: bannerLeftShift,
                     child: OnboardingBanner(
                       label: 'Flexible Job Providers',
                       color: context.teal,
@@ -113,8 +124,9 @@ class _OnboardingViewState extends State<OnboardingView>
                     ),
                   ),
                   SharpSpacing.large,
-                  Transform.rotate(
-                    angle: -pi / 12,
+                  AnimatedRotation(
+                    duration: Duration(seconds: 1),
+                    turns: bannerRightShift,
                     child: OnboardingBanner(
                       label: 'Sharp work updates daily',
                       color: context.white,
@@ -135,6 +147,8 @@ class _OnboardingViewState extends State<OnboardingView>
                     minWidth: double.infinity,
                     height: 52,
                     elevation: 0,
+                    highlightElevation: 0,
+                    hoverElevation: 0,
                     shape: RoundedRectangleBorder(
                       borderRadius: SharpBorderRadius.radius12,
                     ),

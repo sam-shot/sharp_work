@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:sharp_work/ui/ui.dart';
 
 class OnboardingBanner extends StatelessWidget {
@@ -22,8 +23,8 @@ class OnboardingBanner extends StatelessWidget {
       ),
       child: Padding(
         padding: SharpPadding.horizontalPadding20.copyWith(
-          top: 14,
-          bottom: 14,
+          top: 16.r,
+          bottom: 16.r,
         ),
         child: Text(
           label,
