@@ -1,8 +1,11 @@
 import 'dart:ui';
 
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:sharp_work/core/routes/router.gr.dart';
 import 'package:sharp_work/ui/ui.dart';
 
+@RoutePage()
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
 
@@ -95,7 +98,7 @@ class _OnboardingViewState extends State<OnboardingView>
           ),
           DecoratedBox(
             decoration: BoxDecoration(
-              color: context.primaryColor.withAlpha(150),
+              color: context.primaryColor.withAlpha(200),
             ),
             child: Padding(
               padding: SharpPadding.horizontalPadding16,
@@ -142,7 +145,9 @@ class _OnboardingViewState extends State<OnboardingView>
                   ),
                   SharpSpacing.large,
                   MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.pushRoute(AuthRoute());
+                    },
                     color: context.white,
                     minWidth: double.infinity,
                     height: 52,
