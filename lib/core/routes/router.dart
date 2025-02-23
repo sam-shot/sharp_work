@@ -13,6 +13,36 @@ class SharpRouter extends RootStackRouter {
           initial: true,
         ),
         AutoRoute(page: AuthRoute.page),
-        AutoRoute(page: HomeRoute.page),
+        AutoRoute(
+          path: '/main',
+          page: BottomNavRoute.page,
+          children: [
+            AutoRoute(
+              path: 'home',
+              page: HomeRoute.page,
+              initial: true,
+              type: RouteType.custom(
+                durationInMilliseconds: 500,
+                transitionsBuilder: TransitionsBuilders.fadeIn,
+              ),
+            ),
+            AutoRoute(
+              path: 'saved',
+              page: SavedRoute.page,
+              type: RouteType.custom(
+                durationInMilliseconds: 500,
+                transitionsBuilder: TransitionsBuilders.fadeIn,
+              ),
+            ),
+            AutoRoute(
+              path: 'profile',
+              page: ProfileRoute.page,
+              type: RouteType.custom(
+                durationInMilliseconds: 500,
+                transitionsBuilder: TransitionsBuilders.fadeIn,
+              ),
+            ),
+          ],
+        ),
       ];
 }

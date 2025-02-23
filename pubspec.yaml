@@ -18,6 +18,9 @@ dependencies:
   auto_route:
   get_it:
   hooks_riverpod:
+  ficonsax:
+
+  device_preview:
 
 dev_dependencies:
   flutter_test:

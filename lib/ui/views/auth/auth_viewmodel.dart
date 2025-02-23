@@ -11,6 +11,6 @@ class AuthViewModel extends AppViewModel {
   AuthViewModel(this.ref);
 
   void login() {
-    router.push(HomeRoute());
+    router.push(BottomNavRoute());
   }
 }

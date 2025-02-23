@@ -28,12 +28,22 @@ class HomeHeader extends StatelessWidget {
             ),
           ),
           SharpSpacing.normal,
-          Text(
-            'Choose a Job Type',
-            style: context.bodyMedium.copyWith(
-              color: context.white,
-              // fontSize: 10.r,
-            ),
+          Row(
+            children: [
+              Text(
+                'Choose a Job Type',
+                style: context.bodyMedium.copyWith(
+                  color: context.white,
+                  // fontSize: 10.r,
+                ),
+              ),
+              SharpSpacing.medium,
+              Icon(
+                IconsaxOutline.arrow_down,
+                color: context.white,
+                size: 16.r,
+              )
+            ],
           ),
           SharpSpacing.normal,
           SingleChildScrollView(

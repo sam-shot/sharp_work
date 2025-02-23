@@ -1,5 +1,7 @@
 import 'package:auto_route/annotations.dart';
+import 'package:ficonsax/ficonsax.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:sharp_work/ui/ui.dart';
 import 'package:sharp_work/ui/views/home/home_viewmodel.dart';
@@ -19,6 +21,7 @@ class HomeView extends ConsumerWidget {
         automaticallyImplyLeading: false,
         leadingWidth: 0,
         title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             TweenAnimationBuilder(
               duration: const Duration(milliseconds: 1200),
@@ -32,12 +35,15 @@ class HomeView extends ConsumerWidget {
                       child: CircleAvatar(
                         radius: SharpDimensions.size20,
                         backgroundColor: context.white,
-                        child: Padding(
-                          padding: SharpPadding.padding2,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: context.teal,
-                              shape: BoxShape.circle,
+                        child: Hero(
+                          tag: 'profilepic',
+                          child: Padding(
+                            padding: SharpPadding.padding2,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: context.teal,
+                                shape: BoxShape.circle,
+                              ),
                             ),
                           ),
                         ),
@@ -73,6 +79,18 @@ class HomeView extends ConsumerWidget {
                 );
               },
             ),
+            InkWell(
+              onTap: () {},
+              child: CircleAvatar(
+                backgroundColor: context.primaryColorLight,
+                radius: 19.r,
+                child: Icon(
+                  IconsaxOutline.search_normal_1,
+                  color: context.white,
+                  size: 18.r,
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -102,36 +120,12 @@ class HomeView extends ConsumerWidget {
                   ],
                 ),
                 SharpSpacing.normal,
-                Container(
-                  decoration: BoxDecoration(
-                    color: context.lightGrey,
-                    borderRadius: SharpBorderRadius.radius12,
-                  ),
-                  width: 180,
-                  padding: SharpPadding.padding16,
-                  child: Column(
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    spacing: 12.r,
                     children: [
-                      Text(
-                        'Product Designer',
-                        style: context.labelMedium.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SharpSpacing.medium,
-                      Text(
-                        'We are looking for a dynamic product designer',
-                        style: context.labelSmall.copyWith(
-                          color: context.grey,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                      SharpSpacing.normal,
-                      PrimaryButton(
-                        label: 'Apply',
-                        borderRadius: SharpBorderRadius.radius32,
-                        height: 40,
-                        onTap: () {},
-                      ),
+                      for (final i in [1, 2, 8, 3, 1]) JobCard()
                     ],
                   ),
                 )
